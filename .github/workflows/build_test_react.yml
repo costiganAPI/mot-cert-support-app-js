@@ -22,7 +22,7 @@ jobs:
       - name: Install dependencies and run unit tests
         run: |
           npm ci
-          npm test
+          npm test -- --reporters=jest-junit
 
       - name: Run E2E tests
         run: |
@@ -33,3 +33,10 @@ jobs:
       - name: Build production artifacts
         run: |
           npm run build --if-present
+      - name: Publish Test Results
+        uses: EnricoMi/publish-unit-test-result-action/composite@v2
+        if: always()
+        with:
+          files: |
+           junit.xml
+           reports/e2e-report/*.xml
