@@ -27,7 +27,7 @@ function ProjectList() {
                             <div className="card-body">
                                 <h2 className="card-title">Projects</h2>
                                 <p>Select one of the projects to view your timesheet and add new entries.</p>
-                                <ul className="list-group">
+                                <ul className="list-group" data-testid="project-table">
                                     {projects.map(project => (
                                         <li className="list-group-item" key={project.id}>
                                             <Link to={"/projects/" + project.id}>{project.name}</Link> - {project.description}
