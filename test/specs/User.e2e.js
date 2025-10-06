@@ -1,15 +1,15 @@
 import { expect } from '@wdio/globals'
 
-describe('Project feature', () => {
+describe('User feature', () => {
 
-    it('shows projects in list', async () => {
+    it('shows users in list', async () => {
         await browser.url('http://localhost:3000')
 
         await $('input[name="email"]').setValue('admin@test.com')
         await $('input[name="password"]').setValue('password123')
         await $('button').click()
 
-        await $('a[href="#/manage/projects"]').click()
+        await $('a[href="#/manage/users"]').click()
 
         const projects = await $$('tbody tr')
 

@@ -1,72 +1,13 @@
 {
-  "name": "timesheet-manager",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^6.4.2",
-    "@testing-library/react": "^15.0.5",
-    "@testing-library/user-event": "^14.5.2",
-    "axios": "^1.6.8",
-    "babel-jest": "^29.7.0",
-    "bootstrap-icons": "^1.11.3",
-    "http-proxy-middleware": "^3.0.0",
-    "jest-junit": "^16.0.0",
-    "nock": "^13.5.4",
-    "react": "^18.3.1",
-    "react-bootstrap-icons": "^1.11.4",
-    "react-dom": "^18.3.1",
-    "react-router-dom": "^6.23.0",
-    "react-scripts": "5.0.1",
-    "recharts": "^2.12.6"
+  "name": "example-framework",
+  "type": "module",
+  "devDependencies": {
+    "@wdio/cli": "^8.27.0",
+    "@wdio/spec-reporter": "^8.26.0",
+    "@wdio/local-runner": "^8.26.0",
+    "@wdio/mocha-framework": "^8.26.0"
   },
   "scripts": {
-    "start": "concurrently --kill-others \"cd mocks && java -jar wiremock-standalone.jar --port 8080\" \"react-scripts start\"",
-    "start-mockless": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --reporters=default --reporters=jest-junit",
-    "eject": "react-scripts eject",
     "wdio": "wdio run ./wdio.conf.js"
-  },
-  "jest": {
-    "transform": {
-      "^.+\\.[t|j]sx?$": "babel-jest"
-    },
-    "transformIgnorePatterns": [
-      "node_modules/(?!@shotgunjed)/"
-    ]
-  },
-  "jest-junit": {
-    "outputDirectory": "reports/junit",
-    "outputName": "junit.xml"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "@babel/register": "^7.23.7",
-    "@wdio/allure-reporter": "^8.36.1",
-    "@wdio/cli": "^9.18.4",
-    "@wdio/globals": "^9.17.0",
-    "@wdio/junit-reporter": "^9.18.0",
-    "@wdio/local-runner": "^9.18.4",
-    "@wdio/mocha-framework": "^9.18.0",
-    "concurrently": "^8.2.2",
-    "wdio-wait-for": "^3.0.11"
   }
 }

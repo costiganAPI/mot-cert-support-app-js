@@ -1,4 +1,4 @@
-exports.config = {
+export const config = {
     //
     // ====================
     // Runner Configuration
@@ -49,13 +49,9 @@ exports.config = {
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://saucelabs.com/platform/platform-configurator
     //
-
     capabilities: [{
-    browserName: 'chrome',
-    'goog:chromeOptions': {
-        args: ['headless', 'disable-gpu']
-    }
-}],
+        browserName: 'chrome'
+    }],
 
     //
     // ===================
@@ -69,7 +65,7 @@ exports.config = {
     // Set specific log levels per logger
     // loggers:
     // - webdriver, webdriverio
-    // - @wdio/browserstack-service, @wdio/lighthouse-service, @wdio/sauce-service
+    // - @wdio/browserstack-service, @wdio/devtools-service, @wdio/sauce-service
     // - @wdio/mocha-framework, @wdio/jasmine-framework
     // - @wdio/local-runner
     // - @wdio/sumologic-reporter
@@ -88,7 +84,7 @@ exports.config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    // baseUrl: 'http://localhost:8080',
+    baseUrl: 'http://localhost:3000',
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
@@ -127,13 +123,7 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-
-    reporters: [['junit',{
-    outputDir: './reports/e2e-report/',
-    outputFileFormat: function(options) {
-        return 'junit-report-${options.cid}.xml'
-    }
-}]],
+    reporters: ['spec'],
 
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
